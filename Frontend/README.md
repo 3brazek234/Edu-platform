@@ -1,12 +1,18 @@
-# go-fluent-ui
+# Go Fluent UI + WordPress Plugin
 
-Lightweight React + Vite UI for a tutoring/order flow (Tailwind + shadcn-style components).
+Lightweight React + Vite UI for a tutoring/order flow (Tailwind ) **with a WordPress backend plugin**.
 
-This repository contains a small frontend that includes an order flow (subject selection, package selection, and a final `OrderSummary` form).
+This repository contains:
+
+- **Frontend (`/frontend`)** — React app (subject selection, package selection, checkout form).
+- **WordPress Plugin (`/plugin`)** — Adds a `Course` post type and an order submission REST endpoint.
+
+---
 
 ## Quick start
 
 Requirements
+
 - Node.js 18+ (or compatible)
 - npm (or yarn/pnpm)
 
@@ -35,6 +41,7 @@ npm run preview
 ```
 
 ## Important files
+
 - `src/components/OrderPage/OrderSummary.tsx` — React form for submitting orders (now uses react-hook-form + zod)
 - `src/services/submitOrder.ts` — Service that posts order payload to the backend endpoint
 - `src/types/interface.ts` — shared types for `Package` and `Subject`
@@ -67,6 +74,7 @@ Form validation uses `zod` via `@hookform/resolvers`. Validation runs on field t
 The project follows a small service pattern: network calls are pulled into `src/services/*` and the UI components call those services. This makes the components easier to test and keeps network logic isolated.
 
 ## Next steps
+
 - Add integration tests around `OrderSummary` with React Testing Library and MSW.
 - Add better payment handling (tokenization) instead of raw card submission.
 
